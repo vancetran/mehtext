@@ -1,9 +1,14 @@
 import React from 'react'
 
-type Props = { label: string; name: string }
+type Props = {
+  label: string
+  name: string
+  handleChange: Function
+  value: string
+}
 
 const TextField = (props: Props) => {
-  const { label, name } = props
+  const { label, name, handleChange, value } = props
   return (
     <>
       <label htmlFor={name}>{label}</label>
@@ -12,6 +17,8 @@ const TextField = (props: Props) => {
         type="text"
         id={name}
         name={name}
+        onChange={() => handleChange()}
+        value={value}
       />
     </>
   )
