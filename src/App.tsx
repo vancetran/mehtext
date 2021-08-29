@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import Page from './components/Page'
 import './App.css'
 import TextField from './components/TextField'
-import { capitalize } from './utils/textTransform'
+import { capitalize, sarcastic } from './utils/textTransform'
 
 function App() {
   const [mainInput, setMainInput] = useState('')
@@ -41,6 +41,13 @@ function App() {
           name={'Capitalize'}
           handleChange={noop}
           value={capitalize(mainInput)}
+        />
+
+        <TextField
+          label={'Sarcastic'}
+          name={'Sarcastic'}
+          handleChange={noop}
+          value={sarcastic(mainInput)}
         />
       </div>
     </Page>
