@@ -9,7 +9,7 @@ export function capitalize(input: string): string {
 export function sarcastic(input: string, random: boolean = true): string {
   let output = ''
   const arr = input.split('')
-  const arrResult = arr.map((el: string, index: number) => {
+  const arrResult = arr.map((el: string, index: number): string => {
     if(random){
       return getRandomInt(2) ? el.toUpperCase() : el
     }
@@ -21,7 +21,7 @@ export function sarcastic(input: string, random: boolean = true): string {
 
 export function clapback(input: string): string {
   const arr = input.split(' ')
-  const arrResult = arr.map( (el, index) => {
+  const arrResult = arr.map( (el: string, index: number): string => {
     if(index !== 0){
       return `👏${el}`
     } else {
