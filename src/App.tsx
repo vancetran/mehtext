@@ -1,11 +1,16 @@
 import * as React from 'react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Page from './components/Page'
 import './App.css'
 import TextField from './components/TextField'
+import { capitalize } from './utils/textTransform'
 
 function App() {
   const [mainInput, setMainInput] = useState('')
+
+  useEffect(() => {
+    console.log('mainInput:', mainInput)
+  }, [mainInput])
 
   const handleChange = (event: React.FormEvent<HTMLInputElement>) => {
     setMainInput(event.currentTarget.value)
@@ -32,10 +37,10 @@ function App() {
         />
 
         <TextField
-          label={'Output'}
-          name={'Output'}
+          label={'Capitalize'}
+          name={'Capitalize'}
           handleChange={noop}
-          value=""
+          value={capitalize(mainInput)}
         />
       </div>
     </Page>
