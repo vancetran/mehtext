@@ -3,13 +3,13 @@ import { useEffect, useState } from 'react'
 import Page from './components/Page'
 import './App.css'
 import TextField from './components/TextField'
-import { capitalize, sarcastic } from './utils/textTransform'
+import { capitalize, clapback, sarcastic } from './utils/textTransform'
 
 function App() {
   const [mainInput, setMainInput] = useState('')
 
   useEffect(() => {
-    console.log('mainInput:', mainInput)
+    // console.log('mainInput:', mainInput)
   }, [mainInput])
 
   const handleChange = (event: React.FormEvent<HTMLInputElement>) => {
@@ -48,6 +48,13 @@ function App() {
           name={'Sarcastic'}
           handleChange={noop}
           value={sarcastic(mainInput)}
+        />
+
+        <TextField
+          label={'Clapback'}
+          name={'Clapback'}
+          handleChange={noop}
+          value={clapback(mainInput)}
         />
       </div>
     </Page>
