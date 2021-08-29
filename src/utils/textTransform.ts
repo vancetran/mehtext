@@ -21,13 +21,12 @@ export function sarcastic(input: string, random: boolean = true): string {
 
 export function clapback(input: string): string {
   const arr = input.split(' ')
-  let arrResult = []
-
-  for(let i = 0; i < arr.length; i++){
-    if(i !== 0){
-      arrResult.push('👏')
+  const arrResult = arr.map( (el, index) => {
+    if(index !== 0){
+      return `👏${el}`
+    } else {
+      return el
     }
-    arrResult.push(arr[i])
-  }
+  })
   return arrResult.join('')
 }
