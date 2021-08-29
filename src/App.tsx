@@ -1,4 +1,5 @@
-import React, { ChangeEvent, useState } from 'react'
+import * as React from 'react'
+import { useState } from 'react'
 import Page from './components/Page'
 import './App.css'
 import TextField from './components/TextField'
@@ -6,8 +7,8 @@ import TextField from './components/TextField'
 function App() {
   const [mainInput, setMainInput] = useState('')
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setMainInput(event.target.value)
+  const handleChange = (event: React.FormEvent<HTMLInputElement>) => {
+    setMainInput(event.currentTarget.value)
   }
 
   const noop = () => {
@@ -23,7 +24,10 @@ function App() {
         <TextField
           label={'Input'}
           name={'Input'}
-          handleChange={handleChange}
+          handleChange={(event: React.FormEvent<HTMLInputElement>): void =>
+            // console.log('hey', event)
+            handleChange(event)
+          }
           value={mainInput}
         />
 

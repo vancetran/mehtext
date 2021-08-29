@@ -17,7 +17,7 @@ const TextField = (props: Props) => {
         type="text"
         id={name}
         name={name}
-        onChange={() => handleChange()}
+        onChange={(event) => handleChange(event)}
         value={value}
       />
     </>
