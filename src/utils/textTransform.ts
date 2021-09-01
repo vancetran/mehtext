@@ -5,18 +5,14 @@ export function capitalize(input: string): string {
   return output
 }
 
-// TODO: Could be optimized
 export function sarcastic(input: string, random: boolean = true): string {
-  let output = ''
-  const arr = input.split('')
-  const arrResult = arr.map((el: string, index: number): string => {
+  const result = input.split('').map((el: string, index: number): string => {
     if(random){
       return getRandomInt(2) ? el.toUpperCase() : el
     }
     return index % 2 === 0 ? el.toUpperCase() : el
-  })
-  output = arrResult.join('')
-  return output
+  }).join('')
+  return result
 }
 
 export function clapback(input: string): string {
