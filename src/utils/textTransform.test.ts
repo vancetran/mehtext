@@ -1,4 +1,4 @@
-import { capitalize, sarcastic } from './textTransform'
+import { capitalize, clapback, sarcastic } from './textTransform'
 
 describe('textTransform', ()=>{
 
@@ -13,6 +13,13 @@ describe('textTransform', ()=>{
       expect(sarcastic('word', false)).toBe('WoRd')
     })
   })
+
+  describe('clapback', () => {
+    test('each word is separated by a clap emoji', () => {
+      expect(clapback('Stop Emphasizing Your Point by Putting Clap Emojis After Every Word')).toBe('Stop👏Emphasizing👏Your👏Point👏by👏Putting👏Clap👏Emojis👏After👏Every👏Word')
+    })
+  })
+
 
 }
 

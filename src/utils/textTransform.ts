@@ -15,6 +15,7 @@ export function sarcastic(input: string, random: boolean = true): string {
   return result
 }
 
+// https://www.vice.com/en/article/jpyajg/the-clap-and-the-clap-back-how-twitter-erased-black-culture-from-an-emoji
 export function clapback(input: string): string {
   const arr = input.split(' ')
   const arrResult = arr.map( (el: string, index: number): string => {
