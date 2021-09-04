@@ -4,6 +4,7 @@ import Page from './components/Page'
 import './App.css'
 import TextField from './components/TextField'
 import { capitalize, clapback, sarcastic } from './utils/textTransform'
+import l10n from './constants/translations.en'
 
 function App() {
   const [mainInput, setMainInput] = useState('')
@@ -23,12 +24,12 @@ function App() {
     <Page>
       <div className="p-8">
         <p className="block mt-1 text-lg leading-tight font-medium text-black">
-          MehText
+          {l10n.main.appTitle}
         </p>
 
         <TextField
-          label={'Input'}
-          name={'Input'}
+          label={l10n.textFields.input}
+          name={l10n.textFields.input}
           handleChange={(event: React.FormEvent<HTMLInputElement>): void =>
             // console.log('hey', event)
             handleChange(event)
@@ -37,22 +38,22 @@ function App() {
         />
 
         <TextField
-          label={'Capitalize'}
-          name={'Capitalize'}
+          label={l10n.textFields.capitalize}
+          name={l10n.textFields.capitalize}
           handleChange={noop}
           value={capitalize(mainInput)}
         />
 
         <TextField
-          label={'Sarcastic'}
-          name={'Sarcastic'}
+          label={l10n.textFields.sarcastic}
+          name={l10n.textFields.sarcastic}
           handleChange={noop}
           value={sarcastic(mainInput)}
         />
 
         <TextField
-          label={'Clapback'}
-          name={'Clapback'}
+          label={l10n.textFields.clapback}
+          name={l10n.textFields.clapback}
           handleChange={noop}
           value={clapback(mainInput)}
         />
