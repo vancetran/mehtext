@@ -6,7 +6,8 @@ const textFields = {
   input: "Input",
   capitalize: 'Capitalize',
   sarcastic: 'Sarcastic',
-  clapback: 'Clapback'
+  clapback: 'Clapback',
+  sssnake: 'Sssnake'
 }
 
 const translations = {main, textFields}

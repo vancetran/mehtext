@@ -10,7 +10,7 @@ type Props = {
 const TextField = (props: Props) => {
   const { label, name, handleChange, value } = props
   return (
-    <>
+    <div>
       <label htmlFor={name}>{label}</label>
       <input
         className="border w-full rounded-sm"
@@ -20,7 +20,7 @@ const TextField = (props: Props) => {
         onChange={(event) => handleChange(event)}
         value={value}
       />
-    </>
+    </div>
   )
 }
 

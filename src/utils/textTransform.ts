@@ -27,3 +27,22 @@ export function clapback(input: string): string {
   })
   return arrResult.join('')
 }
+
+export function sssnake(input: string): string {
+  const arr = input.split(' ')
+  const arrResult = arr.map( (el: string): string => {
+    const lastIndex = el.length - 1
+    if(el.charAt(0) === 's' || el.charAt(0) === 'S' ){
+      if(el.charAt(0)==='s')
+        return `sss${el}`
+      return `SSS${el}`
+    }
+    if(el.charAt(lastIndex) === 's' || el.charAt(lastIndex) === 'S') {
+      if(el.charAt(lastIndex)==='s')
+        return `${el}sss`
+      return `${el}SSS`
+    }
+      return el
+  })
+  return arrResult.join(' ')
+}

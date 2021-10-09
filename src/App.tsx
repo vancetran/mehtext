@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import Page from './components/Page'
 import './App.css'
 import TextField from './components/TextField'
-import { capitalize, clapback, sarcastic } from './utils/textTransform'
+import { capitalize, clapback, sarcastic, sssnake } from './utils/textTransform'
 import l10n from './constants/translations.en'
 
 function App() {
@@ -26,37 +26,45 @@ function App() {
         <p className="block mt-1 text-lg leading-tight font-medium text-black">
           {l10n.main.appTitle}
         </p>
+        <div className="space-y-6">
+          <TextField
+            label={l10n.textFields.input}
+            name={l10n.textFields.input}
+            handleChange={(event: React.FormEvent<HTMLInputElement>): void =>
+              // console.log('hey', event)
+              handleChange(event)
+            }
+            value={mainInput}
+          />
 
-        <TextField
-          label={l10n.textFields.input}
-          name={l10n.textFields.input}
-          handleChange={(event: React.FormEvent<HTMLInputElement>): void =>
-            // console.log('hey', event)
-            handleChange(event)
-          }
-          value={mainInput}
-        />
+          <TextField
+            label={l10n.textFields.capitalize}
+            name={l10n.textFields.capitalize}
+            handleChange={noop}
+            value={capitalize(mainInput)}
+          />
 
-        <TextField
-          label={l10n.textFields.capitalize}
-          name={l10n.textFields.capitalize}
-          handleChange={noop}
-          value={capitalize(mainInput)}
-        />
+          <TextField
+            label={l10n.textFields.sarcastic}
+            name={l10n.textFields.sarcastic}
+            handleChange={noop}
+            value={sarcastic(mainInput)}
+          />
 
-        <TextField
-          label={l10n.textFields.sarcastic}
-          name={l10n.textFields.sarcastic}
-          handleChange={noop}
-          value={sarcastic(mainInput)}
-        />
+          <TextField
+            label={l10n.textFields.clapback}
+            name={l10n.textFields.clapback}
+            handleChange={noop}
+            value={clapback(mainInput)}
+          />
 
-        <TextField
-          label={l10n.textFields.clapback}
-          name={l10n.textFields.clapback}
-          handleChange={noop}
-          value={clapback(mainInput)}
-        />
+          <TextField
+            label={l10n.textFields.sssnake}
+            name={l10n.textFields.sssnake}
+            handleChange={noop}
+            value={sssnake(mainInput)}
+          />
+        </div>
       </div>
     </Page>
   )
