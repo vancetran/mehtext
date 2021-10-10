@@ -28,7 +28,7 @@ export function clapback(input: string): string {
   return arrResult.join('')
 }
 
-export function sssnake(input: string): string {
+export function ssssnake(input: string): string {
   const arr = input.split(' ')
   const arrResult = arr.map( (el: string): string => {
     const lastIndex = el.length - 1

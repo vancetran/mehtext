@@ -1,4 +1,4 @@
-import { capitalize, clapback, sarcastic } from './textTransform'
+import { capitalize, clapback, sarcastic, ssssnake } from './textTransform'
 
 describe('textTransform', ()=>{
 
@@ -20,7 +20,11 @@ describe('textTransform', ()=>{
     })
   })
 
-
+  describe('ssssnake', () => {
+    test('Each word beginning with lowercase or uppercase S is prefixed with extra SSS characters', () => {
+      expect(ssssnake(`Tunnel snakes rule, We're the tunnel snakes, That's us, And we rule! Rule!`)).toBe(`Tunnel ssssnakes rule, We're the tunnel ssssnakes, That'ssss us, And we rule! Rule!`)
+    })
+  })
 }
 
 

@@ -3,7 +3,12 @@ import { useEffect, useState } from 'react'
 import Page from './components/Page'
 import './App.css'
 import TextField from './components/TextField'
-import { capitalize, clapback, sarcastic, sssnake } from './utils/textTransform'
+import {
+  capitalize,
+  clapback,
+  sarcastic,
+  ssssnake,
+} from './utils/textTransform'
 import l10n from './constants/translations.en'
 
 function App() {
@@ -62,7 +67,7 @@ function App() {
             label={l10n.textFields.sssnake}
             name={l10n.textFields.sssnake}
             handleChange={noop}
-            value={sssnake(mainInput)}
+            value={ssssnake(mainInput)}
           />
         </div>
       </div>
