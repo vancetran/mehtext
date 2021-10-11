@@ -46,3 +46,13 @@ export function ssssnake(input: string): string {
   })
   return arrResult.join(' ')
 }
+
+export function airquotes(input: string): string {
+  if(input === '')
+    return ''
+  const arr = input.split(' ')
+  const arrResult = arr.map( (el: string, index: number): string => {
+    return `✌${el}✌ `
+  })
+  return arrResult.join('')
+}

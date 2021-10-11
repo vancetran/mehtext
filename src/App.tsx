@@ -8,6 +8,7 @@ import {
   clapback,
   sarcastic,
   ssssnake,
+  airquotes,
 } from './utils/textTransform'
 import l10n from './constants/translations.en'
 
@@ -64,10 +65,17 @@ function App() {
           />
 
           <TextField
-            label={l10n.textFields.sssnake}
-            name={l10n.textFields.sssnake}
+            label={l10n.textFields.ssssnake}
+            name={l10n.textFields.ssssnake}
             handleChange={noop}
             value={ssssnake(mainInput)}
+          />
+
+          <TextField
+            label={l10n.textFields.airquotes}
+            name={l10n.textFields.airquotes}
+            handleChange={noop}
+            value={airquotes(mainInput)}
           />
         </div>
       </div>
