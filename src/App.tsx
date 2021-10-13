@@ -18,9 +18,9 @@ function App() {
   return (
     <Page>
       <div className="p-8">
-        <p className="block mt-1 text-lg leading-tight font-medium text-black">
+        <h1 className="block mt-1 mb-8 text-6xl leading-tight font-medium text-black">
           {l10n.main.appTitle}
-        </p>
+        </h1>
         <div className="space-y-6">
           <TextField
             label={l10n.textFields.input}
