@@ -4,7 +4,6 @@ const main = {
 
 const textFields = {
   input: "Input",
-  capitalize: 'Capitalize',
   sarcastic: 'Sarcastic',
   clapback: 'Clapback',
   ssssnake: 'Ssssnake',

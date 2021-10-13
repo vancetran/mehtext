@@ -3,13 +3,7 @@ import { useEffect, useState } from 'react'
 import Page from './components/Page'
 import './App.css'
 import TextField from './components/TextField'
-import {
-  capitalize,
-  clapback,
-  sarcastic,
-  ssssnake,
-  airquotes,
-} from './utils/textTransform'
+import { clapback, sarcastic, ssssnake, airquotes } from './utils/textTransform'
 import l10n from './constants/translations.en'
 
 function App() {
@@ -41,13 +35,6 @@ function App() {
               handleChange(event)
             }
             value={mainInput}
-          />
-
-          <TextField
-            label={l10n.textFields.capitalize}
-            name={l10n.textFields.capitalize}
-            handleChange={noop}
-            value={capitalize(mainInput)}
           />
 
           <TextField

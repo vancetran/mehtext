@@ -1,10 +1,5 @@
 import { getRandomInt } from "./RNG"
 
-export function capitalize(input: string): string {
-  const output = input.toUpperCase()
-  return output
-}
-
 export function sarcastic(input: string, random: boolean = true): string {
   const result = input.split('').map((el: string, index: number): string => {
     if(random){

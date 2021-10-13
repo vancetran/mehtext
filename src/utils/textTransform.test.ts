@@ -1,12 +1,6 @@
-import { capitalize, clapback, sarcastic, ssssnake } from './textTransform'
+import { clapback, sarcastic, ssssnake } from './textTransform'
 
 describe('textTransform', ()=>{
-
-  describe('capitalize', () => {
-    test('Text output is capitalized', () => {
-      expect(capitalize('word')).toBe('WORD')
-    })
-  })
 
   describe('sarcastic', () => {
     test('Each letter is output in predictable alternating case when random is false', () => {
