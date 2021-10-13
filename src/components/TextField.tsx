@@ -1,14 +1,15 @@
 import React from 'react'
+import { noop } from 'lodash'
 
 type Props = {
   label: string
   name: string
-  handleChange: Function
+  handleChange?: Function
   value: string
 }
 
 const TextField = (props: Props) => {
-  const { label, name, handleChange, value } = props
+  const { label, name, handleChange = noop, value } = props
   return (
     <div>
       <label htmlFor={name}>{label}</label>

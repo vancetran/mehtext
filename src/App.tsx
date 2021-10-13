@@ -3,23 +3,18 @@ import { useEffect, useState } from 'react'
 import Page from './components/Page'
 import './App.css'
 import TextField from './components/TextField'
-import { clapback, sarcastic, ssssnake, airquotes } from './utils/textTransform'
+import textTransformFields from './config/textTransformFields'
 import l10n from './constants/translations.en'
 
 function App() {
   const [mainInput, setMainInput] = useState('')
 
-  useEffect(() => {
-    // console.log('mainInput:', mainInput)
-  }, [mainInput])
+  useEffect(() => {}, [mainInput])
 
   const handleChange = (event: React.FormEvent<HTMLInputElement>) => {
     setMainInput(event.currentTarget.value)
   }
 
-  const noop = () => {
-    return null
-  }
   return (
     <Page>
       <div className="p-8">
@@ -37,33 +32,13 @@ function App() {
             value={mainInput}
           />
 
-          <TextField
-            label={l10n.textFields.sarcastic}
-            name={l10n.textFields.sarcastic}
-            handleChange={noop}
-            value={sarcastic(mainInput)}
-          />
-
-          <TextField
-            label={l10n.textFields.clapback}
-            name={l10n.textFields.clapback}
-            handleChange={noop}
-            value={clapback(mainInput)}
-          />
-
-          <TextField
-            label={l10n.textFields.ssssnake}
-            name={l10n.textFields.ssssnake}
-            handleChange={noop}
-            value={ssssnake(mainInput)}
-          />
-
-          <TextField
-            label={l10n.textFields.airquotes}
-            name={l10n.textFields.airquotes}
-            handleChange={noop}
-            value={airquotes(mainInput)}
-          />
+          {textTransformFields.map((field) => (
+            <TextField
+              label={field.label}
+              name={field.name}
+              value={field.value(mainInput)}
+            />
+          ))}
         </div>
       </div>
     </Page>
