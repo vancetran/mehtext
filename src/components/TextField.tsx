@@ -8,6 +8,8 @@ type Props = {
   value: string
 }
 
+// TODO: Add optional copy button to the field?
+
 const TextField = (props: Props) => {
   const { label, name, handleChange = noop, value } = props
   return (
