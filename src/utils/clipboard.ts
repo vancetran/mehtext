@@ -1,7 +1,24 @@
-export default function copyToClipboard(selector) {
-  var copyText = document.querySelector(selector);
-  copyText.select();
-  document.execCommand("copy"); // deprecated, use Clipboard API instead. https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API
-}
+export default function initializeCopyButton(
+  buttonSelector: string,
+  textFieldSelector: string
+) {
+  const buttonElement = document.querySelector(buttonSelector)
+  const textFieldElement = document.querySelector(
+    textFieldSelector
+  ) as HTMLInputElement // https://github.com/microsoft/TypeScript/issues/10453
 
-// document.querySelector("#copy").addEventListener("click", copy);
+  if (buttonElement === null || textFieldElement === null) {
+    console.log('error with copy button')
+  } else {
+    buttonElement.addEventListener('click', () => {
+      navigator.clipboard
+        .writeText(textFieldElement.value)
+        .then(() => {
+          console.log('Text copied.')
+        })
+        .catch(() => {
+          console.log('Failed to copy text.')
+        })
+    })
+  }
+}

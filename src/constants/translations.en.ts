@@ -1,15 +1,16 @@
 const main = {
-  appTitle: 'MehText'
+  appTitle: 'MehText',
+  copy: 'Copy',
 }
 
 const textFields = {
-  input: "Input",
+  input: 'Input',
   sarcastic: 'Sarcastic',
   clapback: 'Clapback',
   ssssnake: 'Ssssnake',
-  airquotes: 'Airquotes'
+  airquotes: 'Airquotes',
 }
 
-const translations = {main, textFields}
+const translations = { main, textFields }
 
-export default translations 
+export default translations
