@@ -30,13 +30,15 @@ function App() {
               handleChange(event)
             }
             value={mainInput}
+            copyButton={false}
           />
 
-          {textTransformFields.map((field) => (
+          {textTransformFields.map(({ label, name, value }) => (
             <TextField
-              label={field.label}
-              name={field.name}
-              value={field.value(mainInput)}
+              label={label}
+              name={name}
+              value={value(mainInput)}
+              key={name}
             />
           ))}
         </div>

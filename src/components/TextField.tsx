@@ -4,20 +4,27 @@ import l10n from '../constants/translations.en'
 import initializeCopyButton from '../utils/clipboard'
 
 type Props = {
+  copyButton?: boolean
+  handleChange?: Function
   label: string
   name: string
-  handleChange?: Function
   value: string
 }
 
-// TODO: Add optional copy button to the field?
-
-const TextField = (props: Props) => {
-  const { label, name, handleChange = noop, value } = props
+const TextField = ({
+  copyButton = true,
+  handleChange = noop,
+  label,
+  name,
+  value,
+}: Props) => {
+  // const { label, name, handleChange = noop, value,  } = props
 
   useEffect(() => {
-    initializeCopyButton(`#${label}-button`, `#${label}-textField`)
-  })
+    if (copyButton) {
+      initializeCopyButton(`#${label}-button`, `#${label}-textField`)
+    }
+  }, [copyButton, label])
 
   return (
     <div>
@@ -30,9 +37,11 @@ const TextField = (props: Props) => {
         onChange={(event) => handleChange(event)}
         value={value}
       />
-      <button id={`${label}-button`} type="button">
-        {l10n.main.copy}
-      </button>
+      {copyButton && (
+        <button id={`${label}-button`} type="button">
+          {l10n.main.copy}
+        </button>
+      )}
     </div>
   )
 }
