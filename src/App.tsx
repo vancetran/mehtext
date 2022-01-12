@@ -26,7 +26,6 @@ function App() {
             label={l10n.textFields.input}
             name={l10n.textFields.input}
             handleChange={(event: React.FormEvent<HTMLInputElement>): void =>
-              // console.log('hey', event)
               handleChange(event)
             }
             value={mainInput}
