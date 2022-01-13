@@ -27,21 +27,23 @@ const TextField = ({
   }, [copyButton, label])
 
   return (
-    <div>
+    <div className="p-6 bg-white rounded-xl shadow-md flex flex-col items-left space-y-4">
       <label htmlFor={`${name}-textField`}>{label}</label>
-      <input
-        className="border w-full rounded-sm"
-        type="text"
-        id={`${name}-textField`}
-        name={name}
-        onChange={(event) => handleChange(event)}
-        value={value}
-      />
-      {copyButton && (
-        <button id={`${label}-button`} type="button">
-          {l10n.main.copy}
-        </button>
-      )}
+      <div className="flex flex-row space-x-4">
+        <input
+          className="border w-full rounded-sm"
+          type="text"
+          id={`${name}-textField`}
+          name={name}
+          onChange={(event) => handleChange(event)}
+          value={value}
+        />
+        {copyButton && (
+          <button id={`${label}-button`} type="button">
+            {l10n.main.copy}
+          </button>
+        )}
+      </div>
     </div>
   )
 }
