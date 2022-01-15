@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react'
 import { noop } from 'lodash'
+import Button from './Button'
 import l10n from '../constants/translations.en'
 import initializeCopyButton from '../utils/clipboard'
 
-type Props = {
+type TextFieldProps = {
   copyButton?: boolean
   handleChange?: Function
   label: string
@@ -17,12 +18,10 @@ const TextField = ({
   label,
   name,
   value,
-}: Props) => {
-  // const { label, name, handleChange = noop, value,  } = props
-
+}: TextFieldProps) => {
   useEffect(() => {
     if (copyButton) {
-      initializeCopyButton(`#${label}-button`, `#${label}-textField`)
+      initializeCopyButton(`#${name}-button`, `#${name}-textField`)
     }
   }, [copyButton, label])
 
@@ -38,11 +37,7 @@ const TextField = ({
           onChange={(event) => handleChange(event)}
           value={value}
         />
-        {copyButton && (
-          <button id={`${label}-button`} type="button">
-            {l10n.main.copy}
-          </button>
-        )}
+        {copyButton && <Button id={`${name}-button`}>{l10n.main.copy}</Button>}
       </div>
     </div>
   )
