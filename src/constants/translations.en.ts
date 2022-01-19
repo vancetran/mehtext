@@ -1,6 +1,7 @@
 const main = {
-  appTitle: 'MehText',
+  appTitle: 'mehText',
   copy: 'Copy',
+  copied: 'Copied!',
 }
 
 const textFields = {
