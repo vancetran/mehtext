@@ -1,4 +1,4 @@
-import React, { ButtonHTMLAttributes, MouseEventHandler } from 'react'
+import React, { MouseEventHandler } from 'react'
 
 type ButtonProps = {
   /** The text contents of the button */
