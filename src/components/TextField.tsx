@@ -34,16 +34,16 @@ const TextField = ({
   }
 
   return (
-    <div className="p-6 bg-white rounded-xl shadow-md flex flex-col items-left space-y-4">
+    <div className="p-6 bg-gray-300 rounded-md shadow-md flex flex-col items-left space-y-4">
       <label
         htmlFor={`${name}-textField`}
-        className="font-semibold text-purple-600"
+        className="font-semibold text-grey-600"
       >
         {label}
       </label>
       <div className="flex flex-row space-x-4">
         <input
-          className="border w-full rounded-sm"
+          className="w-full rounded-md border-gray-400 border-2"
           type="text"
           id={`${name}-textField`}
           name={name}
@@ -51,7 +51,11 @@ const TextField = ({
           value={value}
         />
         {copyButton && (
-          <Button id={`${name}-button`} onClick={handleButtonText}>
+          <Button
+            id={`${name}-button`}
+            onClick={handleButtonText}
+            fixedWidth={20}
+          >
             {copyButtonText}
           </Button>
         )}

@@ -17,8 +17,8 @@ function App() {
 
   return (
     <Page>
-      <div className="p-8">
-        <h1 className="block mt-1 mb-8 text-6xl leading-tight font-medium text-black">
+      <div className="p-4">
+        <h1 className="block mt-1 mb-8 text-4xl leading-tight font-medium text-white">
           {l10n.main.appTitle}
         </h1>
         <div className="space-y-6">
