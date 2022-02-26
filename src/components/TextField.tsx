@@ -54,7 +54,7 @@ const TextField = ({
           <Button
             id={`${name}-button`}
             onClick={handleButtonText}
-            fixedWidth={20}
+            fixedWidth={24}
           >
             {copyButtonText}
           </Button>
